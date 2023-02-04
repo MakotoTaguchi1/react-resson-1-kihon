@@ -1,13 +1,21 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 
 export const App = () => {
+  console.log("再レンダリング")
+  // state定義
   const [num, setNum] = useState(0);
 
   const onClickButton = () => {
     alert();
     setNum((prev) => prev + 1);
   };
+
+  // Effect(stateであるnumが変わった時にアラート表示)
+  useEffect(() => {
+    alert();
+  }, [num]);
 
   return (
     <>
