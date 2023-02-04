@@ -1,10 +1,11 @@
-// export const ColoredMessage = () => {
 export const ColoredMessage = (props) => {
+  // 分割代入
+  const { color, children } = props;
+
   const contentStyle = {
-    color: props.color,
+    color: color,
     fontSize: '20px'
   };
 
-  // return <p style={contentStyle}>お元気ですか？</p>
-  return <p style={contentStyle}>{props.message}</p>
+  return <p style={contentStyle}>{children}</p>
 }
